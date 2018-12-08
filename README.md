@@ -15,6 +15,6 @@ Cláuvin Erlan (https://github.com/Clauvin/)
 
 Eduardo (https://github.com/eduardo1000)
 
-Priscila Ariel (https://github.com/priscilaariel)
+Priscila Ariel (https://github.com/priscilaariel) - Projeto-base.
 
 Souzão (https://github.com/souzaoen)
