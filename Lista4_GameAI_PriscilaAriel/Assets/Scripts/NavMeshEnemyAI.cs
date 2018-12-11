@@ -33,6 +33,7 @@ public class NavMeshEnemyAI : MonoBehaviour {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = player.transform.position;
+
         StartCoroutine(UpdateFSM());
     }
 
