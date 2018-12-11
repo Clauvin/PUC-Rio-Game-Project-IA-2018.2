@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 114484782937088616}
   m_Layer: 0
   m_Name: DarkPrincess
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2924,7 +2924,7 @@ Animator:
   m_GameObject: {fileID: 1298413520443000}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6db04bc21c5245d428bf2464b5cc5376, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7e23bb46fd55e4543801dccd41c0f624, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31622e3e92246684caa97dd557f77277, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2948,8 +2948,8 @@ MonoBehaviour:
   player: {fileID: 0}
   minDistanceToAttack: 1.5
   minDistanceToWalk: 1000000
-  speedRotation: 0.1
-  speedWalk: 0.5
+  speedRotation: 2
+  speedWalk: -3
 --- !u!136 &136120436045296492
 CapsuleCollider:
   m_ObjectHideFlags: 1
