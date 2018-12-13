@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4513375584872954}
   - component: {fileID: 33990672363358736}
   - component: {fileID: 23780713016182108}
+  - component: {fileID: 114434618549232768}
   m_Layer: 0
   m_Name: Anvil Shooter
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1791604696778234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.610712, y: 52.697426, z: -15.719402}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791604696778234}
   m_Mesh: {fileID: 4300000, guid: 051e3ba88d85e954684e39b4f0a90985, type: 3}
+--- !u!114 &114434618549232768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791604696778234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d7e40ff58b6f84a8146067405cbb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
