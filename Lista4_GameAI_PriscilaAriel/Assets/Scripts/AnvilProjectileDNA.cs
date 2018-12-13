@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnvilProjectileDNA : MonoBehaviour {
 
-    float[] projectile_DNA;
+    public float[] projectile_DNA;
 
     enum ProjectileDNANames
     {
