@@ -22,6 +22,7 @@ public class AnvilProjectileDestruction : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        data = GetComponent<AnvilProjectileDestructionData>();
         data.time_of_creation = Time.time;
 	}
 	
