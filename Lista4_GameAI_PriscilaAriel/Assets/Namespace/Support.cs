@@ -6,6 +6,7 @@ namespace Support
 {
     public enum ProjectileDNANames
     {
+        PROJECTILE_TIME,
         PROJECTILE_SPEED,
         X_SIZE,
         Y_SIZE,
