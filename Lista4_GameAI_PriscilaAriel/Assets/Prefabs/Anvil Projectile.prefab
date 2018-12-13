@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4997597954858056}
   - component: {fileID: 33954461155161534}
   - component: {fileID: 114424544190549694}
+  - component: {fileID: 114192376514959776}
+  - component: {fileID: 114554148901094874}
+  - component: {fileID: 114215433986596820}
   - component: {fileID: 23982426848958888}
   m_Layer: 0
   m_Name: Anvil Projectile
@@ -84,6 +87,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054338519410788}
   m_Mesh: {fileID: 4300000, guid: 051e3ba88d85e954684e39b4f0a90985, type: 3}
+--- !u!114 &114192376514959776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054338519410788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40c530c77e62ad499777d11677167d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114215433986596820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054338519410788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952ae69126329e041808c9e68c9c611f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114424544190549694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,4 +120,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfd668ae332b434288d5da46708cc76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile_DNA: []
+  projectile_DNA:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &114554148901094874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054338519410788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c08da6b7b5fe2046abdd646da623c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time_of_creation: 0
+  how_many_seconds_it_should_exist: 0
