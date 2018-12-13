@@ -13,4 +13,17 @@ public class ShootsProjectiles : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    bool TimeToShootAProjectile()
+    {
+        //Checks if its time to launch a projectile
+        //If it is, launch
+        return true;
+    }
+
+    void ShootsProjectile()
+    {
+        // Receives the Projectile DNA
+        // Creates the Projectile using its DNA
+    }
 }
