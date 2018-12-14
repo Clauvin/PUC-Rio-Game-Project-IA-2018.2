@@ -41,8 +41,10 @@ public class AnvilBrainEvolution : MonoBehaviour {
         random_result = Random.Range(0, 14);
         if (random_result > 13) random_result = 13;
 
+        int wheres_the_best_dna = GetComponent<AnvilBrainResults>().best_dna;
+
         AnvilProjectileDNA new_dna = (AnvilProjectileDNA)
-            GetComponent<AnvilBrainResults>().dnas[GetComponent<AnvilBrainResults>().best_dna];
+            GetComponent<AnvilBrainResults>().dnas[wheres_the_best_dna];
 
         new_dna.projectile_DNA[(int)random_result] += value_to_add;
 
@@ -76,8 +78,8 @@ public class AnvilBrainEvolution : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
