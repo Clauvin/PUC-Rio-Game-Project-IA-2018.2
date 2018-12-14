@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114192376514959776}
   - component: {fileID: 114554148901094874}
   - component: {fileID: 114215433986596820}
+  - component: {fileID: 114640003475256194}
+  - component: {fileID: 114939425833625324}
   - component: {fileID: 23982426848958888}
   m_Layer: 0
   m_Name: Anvil Projectile
@@ -148,3 +150,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time_of_creation: 0
   how_many_seconds_it_should_exist: 0
+--- !u!114 &114640003475256194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054338519410788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61d2c91f99bb36449b80b5065305827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fitness: 0
+--- !u!114 &114939425833625324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054338519410788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73cdeebb31ee6154b96a10f4591b9b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
