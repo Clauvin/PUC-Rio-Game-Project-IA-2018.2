@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnvilProjectileDestruction : MonoBehaviour {
 
     AnvilProjectileDestructionData data;
+    AnvilBrainOrders brain_orders;
 
     private bool destroy_in_next_frame = false;
 
@@ -23,6 +24,7 @@ public class AnvilProjectileDestruction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         data = GetComponent<AnvilProjectileDestructionData>();
+        brain_orders = GameObject.FindGameObjectWithTag("Anvil Brain").GetComponent<AnvilBrainOrders>();
         data.time_of_creation = Time.time;
 	}
 	
@@ -30,10 +32,10 @@ public class AnvilProjectileDestruction : MonoBehaviour {
 	void Update () {
 		if (TimeToDestroy() && !destroy_in_next_frame)
         {
-            //Preparativos de envio
             destroy_in_next_frame = true;
         } else if (TimeToDestroy() && destroy_in_next_frame)
         {
+            brain_orders.number_of_projectiles_travelling--;
             Destroy(gameObject);
         }
 	}
