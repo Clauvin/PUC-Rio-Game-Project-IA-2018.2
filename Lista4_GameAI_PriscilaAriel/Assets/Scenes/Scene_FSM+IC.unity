@@ -325,53 +325,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9828322339fa41458b2c471d0e967e7, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &3304880
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 678445605}
-    m_Modifications:
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 52.697426
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -15.719402
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114554148901094874, guid: 5fc0eb2e446c7d04bbead618d2aa2a23,
-        type: 2}
-      propertyPath: how_many_seconds_it_should_exist
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5fc0eb2e446c7d04bbead618d2aa2a23, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!4 &10242532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 421646, guid: c544f22775dffd641b35be9b929052d1,
@@ -26279,7 +26232,9 @@ Transform:
   - {fileID: 357941733}
   - {fileID: 1155273965}
   - {fileID: 1017724476}
-  - {fileID: 1592488888}
+  - {fileID: 1045969310}
+  - {fileID: 2111066603}
+  - {fileID: 896176131}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33180,6 +33135,62 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2522dcf0fb8d6b4aa4ddd10c405746a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &896176130
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 678445605}
+    m_Modifications:
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -60.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 52.697426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -83.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_Name
+      value: Anvil Shooter (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &896176131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 896176130}
+--- !u!1 &896176132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 896176130}
 --- !u!4 &896422075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458024, guid: d2522dcf0fb8d6b4aa4ddd10c405746a,
@@ -34643,6 +34654,62 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099f3d86a4a33ad418b73fcb72ad8d6c, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1045969309
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 678445605}
+    m_Modifications:
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.610712
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 52.697426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -83.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_Name
+      value: Anvil Shooter (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1045969310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1045969309}
+--- !u!1 &1045969311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1045969309}
 --- !u!4 &1048918722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 455772, guid: f110c542cb124a045a69faf5b0b218c4,
@@ -43353,6 +43420,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2522dcf0fb8d6b4aa4ddd10c405746a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1380605251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1017724475}
 --- !u!1001 &1391407719
 Prefab:
   m_ObjectHideFlags: 0
@@ -45965,11 +46037,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 435648, guid: 187270ca2fe18a94cab577d45457fcef,
     type: 2}
   m_PrefabInternal: {fileID: 931128944}
---- !u!4 &1592488888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4997597954858056, guid: 5fc0eb2e446c7d04bbead618d2aa2a23,
-    type: 2}
-  m_PrefabInternal: {fileID: 3304880}
 --- !u!1001 &1595929734
 Prefab:
   m_ObjectHideFlags: 0
@@ -47735,6 +47802,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1784215424}
+  - component: {fileID: 1784215426}
+  - component: {fileID: 1784215425}
+  - component: {fileID: 1784215427}
   m_Layer: 0
   m_Name: AnvilBrain
   m_TagString: Anvil Brain
@@ -47755,6 +47825,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784215425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1784215423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2278e04be5b7bd42a540dd686edef58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plus_randomization_change: 0.9
+  max_or_min: 0
+  max_value_to_add: 3
+--- !u!114 &1784215426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1784215423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df815dad1bdd4442a07206fdf74b6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  best_dna: 0
+  best_fitness: 0
+--- !u!114 &1784215427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1784215423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d0de13c2d16474c8eb6bbbc6c5a6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_projectiles_travelling: 0
+  anvil_shooters:
+  - {fileID: 1380605251}
+  - {fileID: 1045969311}
+  - {fileID: 2111066604}
+  - {fileID: 896176132}
 --- !u!1001 &1784482416
 Prefab:
   m_ObjectHideFlags: 0
@@ -50654,6 +50768,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479512, guid: 32ec60437affc154daf6bbf3557b1fe3,
     type: 2}
   m_PrefabInternal: {fileID: 1547153113}
+--- !u!1001 &2111066602
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 678445605}
+    m_Modifications:
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -60.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 52.697426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.719402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+      propertyPath: m_Name
+      value: Anvil Shooter (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 71f702a7002483846a9c86a8c366b2ee, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &2111066603 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4513375584872954, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 2111066602}
+--- !u!1 &2111066604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 2111066602}
 --- !u!1 &2115861242
 GameObject:
   m_ObjectHideFlags: 0
