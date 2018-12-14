@@ -6,7 +6,7 @@ public class AnvilProjectileDNA : MonoBehaviour {
 
     public float[] projectile_DNA;
 
-    AnvilProjectileDNA(float[] projectile_DNA)
+    public AnvilProjectileDNA(float[] projectile_DNA)
     {
         this.projectile_DNA = projectile_DNA;
     }
