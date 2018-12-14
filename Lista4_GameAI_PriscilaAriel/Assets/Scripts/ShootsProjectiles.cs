@@ -14,16 +14,12 @@ public class ShootsProjectiles : MonoBehaviour {
 		
 	}
 
-    bool TimeToShootAProjectile()
+    public void ShootsProjectile(AnvilProjectileDNA dna)
     {
-        //Checks if its time to launch a projectile
-        //If it is, launch
-        return true;
-    }
+        GameObject new_projectile = (GameObject)Resources.Load("Prefabs/Anvil Projectile");
 
-    void ShootsProjectile()
-    {
-        // Receives the Projectile DNA
-        // Creates the Projectile using its DNA
+        new_projectile.GetComponent<AnvilProjectileDNA>().projectile_DNA = dna.projectile_DNA;
+
+        Instantiate(new_projectile);
     }
 }
