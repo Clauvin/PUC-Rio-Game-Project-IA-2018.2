@@ -1,0 +1,19 @@
+Game Design Document
+
+Título
+O nome do nosso jogo é Destino de Sonya.
+
+Descrição do Jogo
+O nosso jogo é minigame composto de uma cena curta, onde a brava heroína Sonya adentra uma fortaleza em busca de capturar um grande tesouro. Contudo, essa fortaleza não é um local qualquer, ela é habitada pelo temido Lord Cruel, um mago malévolo que patrulha a redondeza com suas terríveis criaturas conjuradas.
+
+Tipo de Jogo / Gênero
+Destino de Sonya é um jogo em formato 3D de estilo RPG, que é para ser jogado offline e se compõe de missões curtas para conclusão. Nesta versão, uma missão é oferecida para o usuário final.
+
+Cenário
+quais as configurações do jogo -----TODO----
+
+Descrição Longa
+contando a história de forma mais longa -----TODO----
+
+Sistema de Jogo
+Que leis? Que objetos precisam ser definidos, que eventos acontecem e que ações são disparadas a cada evento? pode ser útil quebrar o objeto em subcategorias, personagens, npc, sala, vida e tesouros...
