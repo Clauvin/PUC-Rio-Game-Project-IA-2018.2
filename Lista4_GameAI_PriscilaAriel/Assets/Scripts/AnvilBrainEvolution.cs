@@ -38,8 +38,8 @@ public class AnvilBrainEvolution : MonoBehaviour {
         float value_to_add = random_result;
         value_to_add *= max_or_min;
 
-        random_result = Random.Range(0, 14);
-        if (random_result > 13) random_result = 13;
+        random_result = Random.Range(0, 11);
+        if (random_result > 10) random_result = 10;
 
         int wheres_the_best_dna = GetComponent<AnvilBrainResults>().best_dna;
 
@@ -56,13 +56,13 @@ public class AnvilBrainEvolution : MonoBehaviour {
         float position_1;
         float position_2;
 
-        position_1 = Random.Range(0, 14);
-        if (position_1 > 13) position_1 = 13;
+        position_1 = Random.Range(0, 11);
+        if (position_1 > 10) position_1 = 10;
 
         do
         {
-            position_2 = Random.Range(0, 14);
-            if (position_1 > 13) position_1 = 13;
+            position_2 = Random.Range(0, 11);
+            if (position_1 > 10) position_1 = 10;
         } while ((int)position_1 == (int)position_2);
 
         AnvilProjectileDNA new_dna = (AnvilProjectileDNA)

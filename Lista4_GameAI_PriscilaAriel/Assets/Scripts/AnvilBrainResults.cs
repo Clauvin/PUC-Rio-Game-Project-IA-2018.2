@@ -15,8 +15,8 @@ public class AnvilBrainResults : MonoBehaviour {
         AnvilProjectileDNA dna = (AnvilProjectileDNA)dnas[best_dna];
         float fitness = best_fitness;
 
-        if (fitness > ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness) fitness =
-                ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness;
+        if (fitness > ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness)
+            fitness = ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness;
 
         dnas = new ArrayList(1);
         dnas.Add(dna);
@@ -40,15 +40,12 @@ public class AnvilBrainResults : MonoBehaviour {
         float[] valores = new float[14];
         valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 3.0f;
         valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 5;
-        valores[(int)ProjectileDNANames.X_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.X_OFFSET] = 0;
         valores[(int)ProjectileDNANames.X_SIZE] = 2;
         valores[(int)ProjectileDNANames.X_TELEGUIDING] = 0;
-        valores[(int)ProjectileDNANames.Y_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.Y_OFFSET] = 0;
         valores[(int)ProjectileDNANames.Y_SIZE] = 2;
         valores[(int)ProjectileDNANames.Y_TELEGUIDING] = 0;
-        valores[(int)ProjectileDNANames.Z_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.Z_OFFSET] = 0;
         valores[(int)ProjectileDNANames.Z_SIZE] = 2;
         valores[(int)ProjectileDNANames.Z_TELEGUIDING] = 0;

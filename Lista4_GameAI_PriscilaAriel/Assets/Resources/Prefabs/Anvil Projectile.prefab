@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4997597954858056}
   - component: {fileID: 33954461155161534}
+  - component: {fileID: 114640003475256194}
   - component: {fileID: 114424544190549694}
   - component: {fileID: 114192376514959776}
   - component: {fileID: 114554148901094874}
   - component: {fileID: 114215433986596820}
-  - component: {fileID: 114640003475256194}
   - component: {fileID: 114939425833625324}
   - component: {fileID: 114588705126488550}
   - component: {fileID: 23982426848958888}
@@ -124,9 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_DNA:
-  - 0
-  - 0
-  - 0
   - 0
   - 0
   - 0
