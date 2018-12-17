@@ -34,7 +34,7 @@ public class AnvilBrainResults : MonoBehaviour {
 
 
         float[] valores = new float[14];
-        valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 600.0f;
+        valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 6.0f;
         valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 5;
         valores[(int)ProjectileDNANames.X_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.X_OFFSET] = 0;
