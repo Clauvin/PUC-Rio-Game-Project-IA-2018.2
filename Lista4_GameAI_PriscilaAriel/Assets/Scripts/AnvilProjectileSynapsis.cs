@@ -10,22 +10,6 @@ public class AnvilProjectileSynapsis : MonoBehaviour {
     {
         brain_results.dnas.Add(GetComponent<AnvilProjectileDNA>());
         brain_results.fitness_data.Add(GetComponent<AnvilProjectileFitnessData>());
-
-        if (brain_results.dnas.Count == 1)
-        {
-            brain_results.best_dna = 0;
-            brain_results.best_fitness = GetComponent<AnvilProjectileFitnessData>().fitness;
-        }
-        else
-        {
-            if (brain_results.best_fitness > GetComponent<AnvilProjectileFitnessData>().fitness)
-            {
-                Debug.Log("substituicao de brain_results.best_fitness " + brain_results.best_fitness + " por " +
-                            GetComponent<AnvilProjectileFitnessData>().fitness);
-                brain_results.best_dna = brain_results.dnas.Count - 1;
-                brain_results.best_fitness = GetComponent<AnvilProjectileFitnessData>().fitness;
-            }
-        }
     }
 
 	// Use this for initialization
