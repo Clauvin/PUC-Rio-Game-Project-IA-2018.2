@@ -47836,8 +47836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2278e04be5b7bd42a540dd686edef58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plus_randomization_change: 0.9
-  max_or_min: 0
+  plus_randomization_change: 0.5
   max_value_to_add: 0.1
 --- !u!114 &1784215426
 MonoBehaviour:
