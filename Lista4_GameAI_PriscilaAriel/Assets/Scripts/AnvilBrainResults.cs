@@ -15,11 +15,16 @@ public class AnvilBrainResults : MonoBehaviour {
         AnvilProjectileDNA dna = (AnvilProjectileDNA)dnas[best_dna];
         float fitness = best_fitness;
 
+        if (fitness > ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness) fitness =
+                ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness;
+
         dnas = new ArrayList(1);
         dnas.Add(dna);
         best_dna = 0;
         best_fitness = fitness;
     }
+
+
 
     // Use this for initialization
     void Awake()
@@ -31,7 +36,6 @@ public class AnvilBrainResults : MonoBehaviour {
     void Start () {
         dnas = new ArrayList(1);
         fitness_data = new ArrayList(1);
-
 
         float[] valores = new float[14];
         valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 3.0f;
