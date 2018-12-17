@@ -33,6 +33,8 @@ public class AnvilProjectileDestruction : MonoBehaviour {
 		if (TimeToDestroy() && !destroy_in_next_frame)
         {
             destroy_in_next_frame = true;
+            GetComponent<AnvilProjectileSynapsis>().PassResultsToBrain();
+
         } else if (TimeToDestroy() && destroy_in_next_frame)
         {
             brain_orders.number_of_projectiles_travelling--;
