@@ -82,6 +82,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
             teleguiding.z = -1 * dna.projectile_DNA[(int)ProjectileDNANames.Z_TELEGUIDING];
         }
 
-        transform.position += direct_change + offset + acceleration + teleguiding;
+        transform.position += (direct_change + offset + acceleration + teleguiding) / 4;
     }
 }
