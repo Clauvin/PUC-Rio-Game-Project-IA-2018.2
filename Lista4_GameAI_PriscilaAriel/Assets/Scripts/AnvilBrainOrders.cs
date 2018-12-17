@@ -22,6 +22,7 @@ public class AnvilBrainOrders : MonoBehaviour {
 	void Update () {
 		if (number_of_projectiles_travelling == 0)
         {
+            Debug.Log("Best fitness = " + GetComponent<AnvilBrainResults>().best_fitness);
             for (int i = 0; i < anvil_shooters.Length; i++)
             {
                 anvil_shooters[i].GetComponent<ShootsProjectiles>().ShootsProjectile(brain_evolution.MutateNewDNA());
