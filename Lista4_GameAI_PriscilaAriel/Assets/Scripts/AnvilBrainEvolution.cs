@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnvilBrainEvolution : MonoBehaviour {
 
     public float plus_randomization_change;
-    public int max_or_min;
+    private int max_or_min;
     public float max_value_to_add;
 
     public AnvilProjectileDNA MutateNewDNA()
