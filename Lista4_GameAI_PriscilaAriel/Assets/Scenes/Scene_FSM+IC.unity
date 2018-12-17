@@ -26232,8 +26232,8 @@ Transform:
   - {fileID: 357941733}
   - {fileID: 1155273965}
   - {fileID: 1017724476}
-  - {fileID: 1045969310}
   - {fileID: 2111066603}
+  - {fileID: 1045969310}
   - {fileID: 896176131}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -47838,7 +47838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plus_randomization_change: 0.9
   max_or_min: 0
-  max_value_to_add: 3
+  max_value_to_add: 0.1
 --- !u!114 &1784215426
 MonoBehaviour:
   m_ObjectHideFlags: 0
