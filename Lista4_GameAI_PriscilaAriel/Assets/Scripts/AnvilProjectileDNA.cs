@@ -11,6 +11,11 @@ public class AnvilProjectileDNA : MonoBehaviour {
         this.projectile_DNA = projectile_DNA;
     }
 
+    public float[] getProjectileDNA()
+    {
+        return projectile_DNA;
+    }
+
     // Use this for initialization
     void Start () {
 		

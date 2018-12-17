@@ -2951,7 +2951,7 @@ MonoBehaviour:
   minDistanceToAttack: 1.5
   minDistanceToWalk: 1e+14
   speedRotation: 1
-  speedWalk: -2.5
+  speedWalk: -0.5
 --- !u!136 &136120436045296492
 CapsuleCollider:
   m_ObjectHideFlags: 1
