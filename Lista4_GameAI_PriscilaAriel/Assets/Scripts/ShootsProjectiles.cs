@@ -24,5 +24,7 @@ public class ShootsProjectiles : MonoBehaviour {
 
         new_projectile.GetComponent<AnvilProjectileDestructionData>().how_many_seconds_it_should_exist =
             dna[(int)Support.ProjectileDNANames.PROJECTILE_TIME];
+
+        new_projectile.transform.position = this.transform.position;
     }
 }
