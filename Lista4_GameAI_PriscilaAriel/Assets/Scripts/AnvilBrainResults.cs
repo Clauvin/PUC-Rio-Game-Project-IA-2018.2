@@ -12,6 +12,7 @@ public class AnvilBrainResults : MonoBehaviour {
     public float best_fitness = float.MaxValue;
 
     public int quant_of_worsening_fitness = 0;
+    public int limit_of_worsening_fitness = 6;
 
     public void ChooseBestDNAandFitness()
     {
@@ -43,6 +44,18 @@ public class AnvilBrainResults : MonoBehaviour {
         else
         {
             quant_of_worsening_fitness++;
+            if (quant_of_worsening_fitness >= limit_of_worsening_fitness)
+            {
+                if (GetComponent<AnvilBrainEvolution>().plus_randomization_change == 1.0f)
+                {
+                    GetComponent<AnvilBrainEvolution>().plus_randomization_change = 0.0f;
+                }
+                else if (GetComponent<AnvilBrainEvolution>().plus_randomization_change == 0.0f)
+                {
+                    GetComponent<AnvilBrainEvolution>().plus_randomization_change = 1.0f;
+                }
+                quant_of_worsening_fitness = 0;
+            }
         }
 
         Debug.Log(best_dna);
