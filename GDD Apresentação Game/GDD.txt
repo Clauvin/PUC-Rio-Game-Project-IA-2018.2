@@ -1,0 +1,67 @@
+Game Design Document
+
+Título
+O nome do nosso jogo se chama Destino de Sonia.
+
+Descrição do Jogo
+O nosso jogo é minigame composto de uma cena curta, onde a brava heroína Sonya adentra uma fortaleza com o objetivo de capturar um grande tesouro. Contudo, essa fortaleza não é um local qualquer, ela é habitada pelo temido Lord Cruel, um mago malévolo que patrulha a redondeza com suas terríveis criaturas conjuradas.
+
+Tipo de Jogo / Gênero
+Destino de Sonia é um jogo em formato 3D de estilo RPG, que é para ser jogado offline e se compõe de missões curtas para conclusão. A ideia do jogo é que o usuários desenvolva entre em uma dungeon, mate os monstros do local e pegue o tesouro. Nesta versão, apenas uma missão é oferecida para o usuário final.
+
+Cenário
+O jogo começa com Sonia de frente para uma fortaleza. Este ambiente é uma construção de proporção grande, que possui em seu interior paredes de pedra, detalhes em madeira, bandeiras de facção, espaço para artilharia nas muralhas e toda atmosfera para imergir o usuário em um ambiente medieval.
+A Fortaleza possui vários Objetos durante a execução do Jogo como casas, fogueiras, carrinhos de mão, barris, caixotes, bigornas, tronco de árvores e muitas muralhas.
+Além disso, o mais especial entre todos esses objetos é o enorme tesouro, que promete deixar qualquer herói que o capture verdadeiramente rico. O tesouro fica dentro da fortaleza.
+Contudo, essa não será uma missão fácil para os aventureiros, que terão que enfrentar o Lord Cruel e sua gangue de inimigos sumonados, que patrulham e defendem a redondeza da fortaleza.
+
+Descrição Longa
+O mundo de Guanto costumava ser um ambiente de paz e harmonia. As pessoas se dedicavam a agricultura, pesca e tinham uma vida pacata. Contudo, um belo dia o mundo de Guanto começa a ser invadido misteriosamente por criaturas sombrias e desconhecidas.
+Os moradores de Guanto não sabem ainda exatamente o motivo de tal invasão, mas sofrem as consequências diariamente com ataques e morte aos povoados.
+Dentre os inimigos mais temidos está o Lord Cruel, um mago muito poderoso que consegue summonar monstros terríveis em seu favor. Tal mago com habilidade necromânticas tem apavorado a população local.
+Sonia, nossa personagem principal, foi criada em vilarejo dentro das florestas de Guanto. Desde sempre muito proativa e obstinada, nossa guerreira trabalhava em uma pequena ferraria, onde desenvolveu sua arte como ferreira e cresceu sua inspiração para combate com espadas. Reconhecida muitas vezes por suas habilidades e sua postura agressiva em combate, Sonia se tornou uma ambiciosa guerreira que luta por reconhecimento e grandes fortunas.
+Contudo, seu caminho de glória está sendo atrapalhado por Lord Cruel. Cruel tem atacado em sequencia múltiplos vilarejos, inclusive a vila natal de Sonia. Espalhando ódio em destruição nada parou de pé em seu caminho.
+Sonia então motivada por vingar seus conterrâneos e principalmente interessada em matar Lord Cruel e obter sua fama e riquezas vai de encontro a fortaleza que o mesmo se encontra presente.
+Será que ela terá sucesso em sua empreitada?
+
+
+Sistema de Jogo
+Personagens
+Sonia - 
+Sonia é uma guerreira agressiva capaz de causar grande dano em batalhas com a sua espada longa de duas mãos.
+Sua vivencia na ferraria e seus talentos interiores lhe proporcionam um grande bonus de força e resistência em seus combates. 
+Sua força é tão enorme, que ela é capaz de levantar objetos muito pesados, que qualquer outro ser humano teria dificuldade. Sonia é capaz de manusear grande espadas e levantar bigornas inteiras com relativa facilidade. Aliás, Sonia usa isso ao seu favor e acabou por desenvolver um peculiar habilidade de lançamento de bigornas, que usa para esmagar seus inimigos.
+
+Lord Cruel -
+Um mago que usa suas magias para atacar os demais. Em seus ataques ele lança fogo em seus inimigos que os levam a faiscar muitas vezes.
+
+Esqueletos -
+Esqueletos são criaturas que foram invocadas pelo Lord cruel. Elas tem velocidade de movimento reduzida, mas são muito fortes no combate corpo-a-corpo. Não possuem ataque especial
+
+Princesa Negra - 
+A princesa negra é uma sombra, que se adapta aos inimigos. Em combate com Sonia, a sombra tomará a forma de seu inimigo e atacará impiedosamente.
+
+A Inteligência Artificial
+Os NPCs e personagens da simulação são movidos por IA e tem seus mecanismos de locomoção por desenhos de waypoint.
+Além disso o módulo de lançamento de bigornas é feito por inteligência da máquina.
+
+O Tesouro
+O tesouro é um baú repleto de riquezas e o objetivo da nossa heroína. Se encontra guardado por muitos monstros.
+
+Sala principal
+A sala principal da fortaleza é onde se encontra o tesouro. É um ambiente que tem um baú enorme e onde ocorre o confronto com o Lord Cruel.
+
+Antesala
+Antes de adentrar na sala existe o ambiente externo da fortaleza. Neste universo aberto muitos monstros deverão ir para cima do personagem principal evitando que o mesmo chegue na sala Principal
+
+Game Over
+Ao matar o Lord Cruel o game finaliza.
+
+
+
+
+Que leis? Que objetos precisam ser definidos, que eventos acontecem e que ações são disparadas a cada evento? 
+
+
+
+

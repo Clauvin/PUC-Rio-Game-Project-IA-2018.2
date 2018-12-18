@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -15,9 +16,20 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject player;
     public float minDistanceToAttack = 1.5f;
-    public float minDistanceToWalk = 20.0f;
+    public float minDistanceToWalk = 10.0f;
+
     public float speedRotation = 1.0f;
     public float speedWalk = 1.0f;
+
+    //*************Add para Waypoint(patrulha):***********************
+
+    public List<Transform> Waypoints = new List<Transform>();
+    private Transform TargetWaypoint;
+    private int TargetWaypointIndex = 0;
+    private float MinDistance = 0.1f;
+    private float LastWaypointIndex;
+
+    //******************************************************************
 
     //Private variables
     private Animator anim;
@@ -30,12 +42,50 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         StartCoroutine(UpdateFSM());
-	}
+
+        //************Patrulha***************
+        LastWaypointIndex = Waypoints.Count - 1;
+        TargetWaypoint = Waypoints[TargetWaypointIndex];
+        //***********************************
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if (state == States.Walk)
+        //*********************Patrulha*******************************
+
+        if (state == States.Idle)
+        {
+            float MovementStep = speedWalk * Time.deltaTime;
+            float RotationStep = speedRotation * Time.deltaTime;
+
+            Vector3 DirectionToTarget = TargetWaypoint.position - transform.position;
+            Quaternion RotationToTarget = Quaternion.LookRotation(DirectionToTarget);
+
+            // Maneira tosca de girar o NPC.
+            //transform.rotation = RotationToTarget;
+
+
+            // Maneira suave de girar, porém com o NPC já deslocando.
+            transform.rotation = Quaternion.Slerp(transform.rotation, RotationToTarget, RotationStep);
+
+            //Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
+            //Debug.DrawRay(transform.position, DirectionToTarget, Color.red, 0f);
+
+            float Distance = Vector3.Distance(transform.position, TargetWaypoint.position);
+            CheckDistanceToWaypoint(Distance);
+
+            Walk();
+
+            transform.position = Vector3.MoveTowards(transform.position, TargetWaypoint.position, MovementStep);
+        }
+
+
+        //***********************************************************************
+
+
+
+        if (state == States.Walk)
         {
             UpdateRotation(player);
             UpdatePosition();
@@ -43,6 +93,25 @@ public class EnemyAI : MonoBehaviour
 
         if (state == States.Attack)
             UpdateRotation(player);
+
+            // Script to attack the player
+            timer += Time.deltaTime;
+
+            if(timer >= timeBetweenAttacks && playerInRange/* && enemyHealth.currentHealth > 0*/)
+            {
+                Attack ();
+            }
+
+            if(playerHealth.currentHealth <= 0)
+            {
+                //anim.SetTrigger ("PlayerDead");
+            }
+
+        // Part of Script to be able to die
+        if(isSinking)
+        {
+            transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+        }
 	}
 
     IEnumerator UpdateFSM()
@@ -119,6 +188,7 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("enemyAttack", false);
         anim.SetBool("enemyWalk", false);
+        
     }
 
     private void Walk()
@@ -131,6 +201,14 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("enemyWalk", true);
         anim.SetBool("enemyAttack", true);
+
+        // ADDED ----- Script to make the Player lose health ----- 
+        timer = 0f;
+
+        if(playerHealth.currentHealth > 0)
+        {
+            playerHealth.TakeDamage (attackDamage);
+        }
     }
 
     private void UpdateRotation(GameObject target)
@@ -144,4 +222,138 @@ public class EnemyAI : MonoBehaviour
     {
         transform.position += transform.forward * Time.deltaTime * speedWalk;
     }
+
+
+
+
+    // ADDED ----- Script to Attack ---------
+
+
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 10;
+
+
+    PlayerHealth playerHealth;
+    //EnemyHealth enemyHealth;
+    bool playerInRange;
+    float timer;
+
+
+    void Awake ()
+    {
+        player = GameObject.FindGameObjectWithTag ("Player");
+        playerHealth = player.GetComponent <PlayerHealth> ();
+        //enemyHealth = GetComponent<EnemyHealth>();
+        anim = GetComponent <Animator> ();
+
+
+        // Part of Script to be able to die
+        enemyAudio = GetComponent <AudioSource> ();
+        hitParticles = GetComponentInChildren <ParticleSystem> ();
+        capsuleCollider = GetComponent <CapsuleCollider> ();
+
+        currentHealth = startingHealth;
+    }
+
+
+    void OnTriggerEnter (Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            playerInRange = true;
+        }
+    }
+
+
+    void OnTriggerExit (Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            playerInRange = false;
+        }
+    }
+
+
+    // ADDED ----- Script to be able to Die --------
+
+
+    public int startingHealth = 100;
+    public int currentHealth;
+    public float sinkSpeed = 2.5f;
+    public int scoreValue = 10;
+    // public AudioClip deathClip;
+
+
+    AudioSource enemyAudio;
+    ParticleSystem hitParticles;
+    CapsuleCollider capsuleCollider;
+    bool isDead;
+    bool isSinking;
+
+
+
+    public void TakeDamage (int amount, Vector3 hitPoint)
+    {
+        if(isDead)
+            return;
+
+        enemyAudio.Play ();
+
+        currentHealth -= amount;
+            
+        hitParticles.transform.position = hitPoint;
+        hitParticles.Play();
+
+        if(currentHealth <= 0)
+        {
+            Death ();
+        }
+    }
+
+
+    void Death ()
+    {
+        isDead = true;
+
+        capsuleCollider.isTrigger = true;
+
+        anim.SetTrigger ("Dead");
+
+        //enemyAudio.clip = deathClip;
+        //enemyAudio.Play ();
+    }
+
+
+    public void StartSinking ()
+    {
+        GetComponent <NavMeshAgent> ().enabled = false;
+        GetComponent <Rigidbody> ().isKinematic = true;
+        isSinking = true;
+        //ScoreManager.score += scoreValue;
+        Destroy (gameObject, 2f);
+    }
+
+    //**************************************Patrulha*********************************************
+
+    void CheckDistanceToWaypoint(float CurrentDistance)
+    {
+        if (CurrentDistance <= MinDistance)
+        {
+            TargetWaypointIndex += 1;
+            UpdateTargetWaypoint();
+        }
+    }
+
+    void UpdateTargetWaypoint()
+    {
+        if (TargetWaypointIndex > LastWaypointIndex)
+        {
+            TargetWaypointIndex = 0;
+        }
+        TargetWaypoint = Waypoints[TargetWaypointIndex];
+    }
+
+
+    //**********************************************************************************************
+
 }
