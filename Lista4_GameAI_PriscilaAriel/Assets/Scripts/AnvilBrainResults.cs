@@ -14,6 +14,8 @@ public class AnvilBrainResults : MonoBehaviour {
     public int quant_of_worsening_fitness = 0;
     public int limit_of_worsening_fitness = 6;
 
+    public int number_of_iterations = 0;
+
     public void ChooseBestDNAandFitness()
     {
         float fit = float.MaxValue;
@@ -59,6 +61,7 @@ public class AnvilBrainResults : MonoBehaviour {
         }
 
         Debug.Log(best_dna);
+        number_of_iterations++;
     }
 
     public void TrimLists()
@@ -79,7 +82,7 @@ public class AnvilBrainResults : MonoBehaviour {
 
         float[] valores = new float[11];
         valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 3.0f;
-        valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 5;
+        valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 0.1f;
         valores[(int)ProjectileDNANames.X_OFFSET] = 0;
         valores[(int)ProjectileDNANames.X_SIZE] = 2;
         valores[(int)ProjectileDNANames.X_TELEGUIDING] = 0;
