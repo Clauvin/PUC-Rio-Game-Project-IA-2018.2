@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -43,6 +44,25 @@ public class EnemyAI : MonoBehaviour
 
         if (state == States.Attack)
             UpdateRotation(player);
+
+            // Script to attack the player
+            timer += Time.deltaTime;
+
+            if(timer >= timeBetweenAttacks && playerInRange/* && enemyHealth.currentHealth > 0*/)
+            {
+                Attack ();
+            }
+
+            if(playerHealth.currentHealth <= 0)
+            {
+                //anim.SetTrigger ("PlayerDead");
+            }
+
+        // Part of Script to be able to die
+        if(isSinking)
+        {
+            transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+        }
 	}
 
     IEnumerator UpdateFSM()
@@ -131,6 +151,14 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("enemyWalk", true);
         anim.SetBool("enemyAttack", true);
+
+        // ADDED ----- Script to make the Player lose health ----- 
+        timer = 0f;
+
+        if(playerHealth.currentHealth > 0)
+        {
+            playerHealth.TakeDamage (attackDamage);
+        }
     }
 
     private void UpdateRotation(GameObject target)
@@ -143,5 +171,115 @@ public class EnemyAI : MonoBehaviour
     private void UpdatePosition()
     {
         transform.position += transform.forward * Time.deltaTime * speedWalk;
+    }
+
+
+
+
+    // ADDED ----- Script to Attack ---------
+
+
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 10;
+
+
+    PlayerHealth playerHealth;
+    //EnemyHealth enemyHealth;
+    bool playerInRange;
+    float timer;
+
+
+    void Awake ()
+    {
+        player = GameObject.FindGameObjectWithTag ("Player");
+        playerHealth = player.GetComponent <PlayerHealth> ();
+        //enemyHealth = GetComponent<EnemyHealth>();
+        anim = GetComponent <Animator> ();
+
+
+        // Part of Script to be able to die
+        enemyAudio = GetComponent <AudioSource> ();
+        hitParticles = GetComponentInChildren <ParticleSystem> ();
+        capsuleCollider = GetComponent <CapsuleCollider> ();
+
+        currentHealth = startingHealth;
+    }
+
+
+    void OnTriggerEnter (Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            playerInRange = true;
+        }
+    }
+
+
+    void OnTriggerExit (Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            playerInRange = false;
+        }
+    }
+
+
+    // ADDED ----- Script to be able to Die --------
+
+
+    public int startingHealth = 100;
+    public int currentHealth;
+    public float sinkSpeed = 2.5f;
+    public int scoreValue = 10;
+    // public AudioClip deathClip;
+
+
+    AudioSource enemyAudio;
+    ParticleSystem hitParticles;
+    CapsuleCollider capsuleCollider;
+    bool isDead;
+    bool isSinking;
+
+
+
+    public void TakeDamage (int amount, Vector3 hitPoint)
+    {
+        if(isDead)
+            return;
+
+        enemyAudio.Play ();
+
+        currentHealth -= amount;
+            
+        hitParticles.transform.position = hitPoint;
+        hitParticles.Play();
+
+        if(currentHealth <= 0)
+        {
+            Death ();
+        }
+    }
+
+
+    void Death ()
+    {
+        isDead = true;
+
+        capsuleCollider.isTrigger = true;
+
+        anim.SetTrigger ("Dead");
+
+        //enemyAudio.clip = deathClip;
+        //enemyAudio.Play ();
+    }
+
+
+    public void StartSinking ()
+    {
+        GetComponent <NavMeshAgent> ().enabled = false;
+        GetComponent <Rigidbody> ().isKinematic = true;
+        isSinking = true;
+        //ScoreManager.score += scoreValue;
+        Destroy (gameObject, 2f);
     }
 }
