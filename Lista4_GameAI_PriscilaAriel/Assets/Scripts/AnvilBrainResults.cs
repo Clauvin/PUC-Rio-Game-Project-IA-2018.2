@@ -21,17 +21,19 @@ public class AnvilBrainResults : MonoBehaviour {
         float fit = float.MaxValue;
         int position = 0;
 
+        Debug.Log("Count = " + dnas.Count);
         for (int i = 0; i < dnas.Count; i++)
         {
             if (fit > ((AnvilProjectileFitnessData)fitness_data[i]).fitness)
             {
+                Debug.Log("Maior = " + fit);
+                Debug.Log("Menor = " + ((AnvilProjectileFitnessData)fitness_data[i]).fitness);
+
                 fit = ((AnvilProjectileFitnessData)fitness_data[i]).fitness;
                 position = i;
             }
+            Debug.Log("---------------------");
         }
-
-        Debug.Log("Fit " + fit);
-        Debug.Log("Position " + position);
 
         if (best_dna == null)
         {
@@ -66,8 +68,10 @@ public class AnvilBrainResults : MonoBehaviour {
 
     public void TrimLists()
     {
-        dnas = new ArrayList(1);
+        dnas.Clear();
         dnas.Add(best_dna);
+        fitness_data.Clear();
+        fitness_data.Add(new AnvilProjectileFitnessData(best_fitness));
     }
 
     // Use this for initialization
