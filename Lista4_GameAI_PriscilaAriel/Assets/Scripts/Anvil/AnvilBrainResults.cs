@@ -16,6 +16,8 @@ public class AnvilBrainResults : MonoBehaviour {
 
     public int number_of_iterations = 0;
 
+    public bool a_hit_was_made = false;
+
     public void ChooseBestDNAandFitness()
     {
         float fit = float.MaxValue;
@@ -75,7 +77,7 @@ public class AnvilBrainResults : MonoBehaviour {
 
     }
 
-    private void ResetFitness()
+    public void ResetFitness()
     {
         dnas = new ArrayList(1);
         fitness_data = new ArrayList(1);

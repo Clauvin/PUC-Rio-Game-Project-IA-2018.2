@@ -42,6 +42,10 @@ public class AnvilProjectileDestruction : MonoBehaviour {
         {
             destroy_in_next_frame = true;
             GetComponent<AnvilProjectileSynapsis>().PassResultsToBrain();
+            if (GetComponent<AnvilProjectileDamage>().damageDone)
+            {
+                GetComponent<AnvilProjectileSynapsis>().PassThatAHitWasAchieved();
+            }
 
         } else if ((TimeToDestroy() && destroy_in_next_frame) ||
                 (GetComponent<AnvilProjectileDamage>().damageDone && destroy_in_next_frame))
