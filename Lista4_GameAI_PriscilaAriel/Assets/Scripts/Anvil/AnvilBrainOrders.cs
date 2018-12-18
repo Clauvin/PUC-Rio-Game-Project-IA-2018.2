@@ -23,23 +23,34 @@ public class AnvilBrainOrders : MonoBehaviour {
 		if (number_of_projectiles_travelling <= 0)
         {
             number_of_projectiles_travelling = 0;
-            brain_results.ChooseBestDNAandFitness();
-
-            for (int i = 0; i < anvil_shooters.Length; i++)
+            if (!brain_results.a_hit_was_made)
             {
-                if (GetComponent<AnvilBrainResults>().best_fitness > 2)
+                brain_results.ChooseBestDNAandFitness();
+
+                for (int i = 0; i < anvil_shooters.Length; i++)
                 {
-                    anvil_shooters[i].GetComponent<ShootsProjectiles>().ShootsProjectile(brain_evolution.MutateNewDNA());
-                } else
-                {
-                    anvil_shooters[i].GetComponent<ShootsProjectiles>().ShootsProjectile(
-                        GetComponent<AnvilBrainResults>().best_dna);
+                    if (GetComponent<AnvilBrainResults>().best_fitness > 2)
+                    {
+                        anvil_shooters[i].GetComponent<ShootsProjectiles>().ShootsProjectile(brain_evolution.MutateNewDNA());
+                    }
+                    else
+                    {
+                        anvil_shooters[i].GetComponent<ShootsProjectiles>().ShootsProjectile(
+                            GetComponent<AnvilBrainResults>().best_dna);
+                    }
+
+                    number_of_projectiles_travelling++;
                 }
 
-                number_of_projectiles_travelling++;
+                brain_results.TrimLists();
             }
+            else
+            {
+                brain_results.a_hit_was_made = false;
 
-            brain_results.TrimLists();
+                brain_results.ResetFitness();
+            }
+            
         }
 	}
 }
