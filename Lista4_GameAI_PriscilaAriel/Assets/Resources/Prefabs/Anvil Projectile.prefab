@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile_DNA:
   - 3
-  - 1
+  - 0.1
   - 0
   - 0
   - 0
