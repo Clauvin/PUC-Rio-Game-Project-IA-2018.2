@@ -37,12 +37,14 @@ public class AnvilProjectileDestruction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (TimeToDestroy() && !destroy_in_next_frame)
+		if ((TimeToDestroy() && !destroy_in_next_frame) || 
+                (GetComponent<AnvilProjectileDamage>().damageDone && !destroy_in_next_frame))
         {
             destroy_in_next_frame = true;
             GetComponent<AnvilProjectileSynapsis>().PassResultsToBrain();
 
-        } else if (TimeToDestroy() && destroy_in_next_frame)
+        } else if ((TimeToDestroy() && destroy_in_next_frame) ||
+                (GetComponent<AnvilProjectileDamage>().damageDone && destroy_in_next_frame))
         {
             brain_orders.number_of_projectiles_travelling--;
             Destroy(gameObject);

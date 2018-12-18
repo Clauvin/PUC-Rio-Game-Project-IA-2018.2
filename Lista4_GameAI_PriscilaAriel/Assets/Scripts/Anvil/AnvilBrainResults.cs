@@ -39,6 +39,7 @@ public class AnvilBrainResults : MonoBehaviour {
         {
             best_dna = (float[])dnas[position];
             best_fitness = fit;
+            quant_of_worsening_fitness = 0;
         }
         else
         {
