@@ -16,9 +16,20 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject player;
     public float minDistanceToAttack = 1.5f;
-    public float minDistanceToWalk = 20.0f;
+    public float minDistanceToWalk = 10.0f;
+
     public float speedRotation = 1.0f;
     public float speedWalk = 1.0f;
+
+    //*************Add para Waypoint(patrulha):***********************
+
+    public List<Transform> Waypoints = new List<Transform>();
+    private Transform TargetWaypoint;
+    private int TargetWaypointIndex = 0;
+    private float MinDistance = 0.1f;
+    private float LastWaypointIndex;
+
+    //******************************************************************
 
     //Private variables
     private Animator anim;
@@ -31,12 +42,50 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
         StartCoroutine(UpdateFSM());
-	}
+
+        //************Patrulha***************
+        LastWaypointIndex = Waypoints.Count - 1;
+        TargetWaypoint = Waypoints[TargetWaypointIndex];
+        //***********************************
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if (state == States.Walk)
+        //*********************Patrulha*******************************
+
+        if (state == States.Idle)
+        {
+            float MovementStep = speedWalk * Time.deltaTime;
+            float RotationStep = speedRotation * Time.deltaTime;
+
+            Vector3 DirectionToTarget = TargetWaypoint.position - transform.position;
+            Quaternion RotationToTarget = Quaternion.LookRotation(DirectionToTarget);
+
+            // Maneira tosca de girar o NPC.
+            //transform.rotation = RotationToTarget;
+
+
+            // Maneira suave de girar, porém com o NPC já deslocando.
+            transform.rotation = Quaternion.Slerp(transform.rotation, RotationToTarget, RotationStep);
+
+            //Debug.DrawRay(transform.position, transform.forward * 50f, Color.green, 0f);
+            //Debug.DrawRay(transform.position, DirectionToTarget, Color.red, 0f);
+
+            float Distance = Vector3.Distance(transform.position, TargetWaypoint.position);
+            CheckDistanceToWaypoint(Distance);
+
+            Walk();
+
+            transform.position = Vector3.MoveTowards(transform.position, TargetWaypoint.position, MovementStep);
+        }
+
+
+        //***********************************************************************
+
+
+
+        if (state == States.Walk)
         {
             UpdateRotation(player);
             UpdatePosition();
@@ -139,6 +188,7 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("enemyAttack", false);
         anim.SetBool("enemyWalk", false);
+        
     }
 
     private void Walk()
@@ -282,4 +332,28 @@ public class EnemyAI : MonoBehaviour
         //ScoreManager.score += scoreValue;
         Destroy (gameObject, 2f);
     }
+
+    //**************************************Patrulha*********************************************
+
+    void CheckDistanceToWaypoint(float CurrentDistance)
+    {
+        if (CurrentDistance <= MinDistance)
+        {
+            TargetWaypointIndex += 1;
+            UpdateTargetWaypoint();
+        }
+    }
+
+    void UpdateTargetWaypoint()
+    {
+        if (TargetWaypointIndex > LastWaypointIndex)
+        {
+            TargetWaypointIndex = 0;
+        }
+        TargetWaypoint = Waypoints[TargetWaypointIndex];
+    }
+
+
+    //**********************************************************************************************
+
 }
