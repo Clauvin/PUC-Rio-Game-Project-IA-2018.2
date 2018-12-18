@@ -15,11 +15,13 @@ public class NavMeshEnemyAI : MonoBehaviour {
     public States state;
 
     public GameObject player;
+    PlayerHealth playerHealth;
     public NavMeshAgent agent;
     public float minDistanceToAttack = 1.5f;
     public float minDistanceToWalk = 20.0f;
     public float speedRotation = 1.0f;
     public float speedWalk = 1.0f;
+    public int attackDamage = 10;
 
     //Private variables
     private Animator anim;
@@ -30,6 +32,7 @@ public class NavMeshEnemyAI : MonoBehaviour {
     {
         state = States.Idle;
         player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = player.transform.position;
@@ -137,6 +140,11 @@ public class NavMeshEnemyAI : MonoBehaviour {
     {
         anim.SetBool("enemyWalk", true);
         anim.SetBool("enemyAttack", true);
+
+        if (playerHealth.currentHealth > 0)
+        {
+            playerHealth.TakeDamage(attackDamage);
+        }
     }
 
     private void UpdateRotation(GameObject target)
