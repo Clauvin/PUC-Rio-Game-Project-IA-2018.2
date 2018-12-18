@@ -35,7 +35,7 @@ public class NavMeshEnemyAI : MonoBehaviour {
         playerHealth = player.GetComponent<PlayerHealth>();
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = player.transform.position;
+        GetComponent<NavMeshAgent>().Warp(transform.position);
 
         StartCoroutine(UpdateFSM());
     }
@@ -157,6 +157,5 @@ public class NavMeshEnemyAI : MonoBehaviour {
     private void UpdatePosition()
     {
         agent.destination = player.transform.position;
-        //transform.position += transform.forward * Time.deltaTime * speedWalk;
     }
 }
