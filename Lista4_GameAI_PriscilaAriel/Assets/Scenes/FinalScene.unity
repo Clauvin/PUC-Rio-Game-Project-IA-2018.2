@@ -1491,7 +1491,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011578242470, guid: 4c58a73fc8e6564489d001864cccdab2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.03
+      value: 9.94
       objectReference: {fileID: 0}
     - target: {fileID: 4000011578242470, guid: 4c58a73fc8e6564489d001864cccdab2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5581,7 +5581,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013169634162, guid: 5dcae5adf53292945adef517afe8041e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -31.22
+      value: -35.07
       objectReference: {fileID: 0}
     - target: {fileID: 4000013169634162, guid: 5dcae5adf53292945adef517afe8041e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -15610,6 +15610,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2522dcf0fb8d6b4aa4ddd10c405746a, type: 2}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD:Lista4_GameAI_PriscilaAriel/Assets/Scenes/FinalScene.unity
 --- !u!1001 &1466942643
 Prefab:
   m_ObjectHideFlags: 0
@@ -15666,6 +15667,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1791604696778234, guid: 71f702a7002483846a9c86a8c366b2ee,
     type: 2}
   m_PrefabInternal: {fileID: 1466942643}
+||||||| merged common ancestors
+=======
+--- !u!1 &1473068848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000014188511100, guid: 5dcae5adf53292945adef517afe8041e,
+    type: 2}
+  m_PrefabInternal: {fileID: 533006131}
+--- !u!64 &1473068849
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1473068848}
+  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 6eef872720cdc8049aa971a249922bcc, type: 3}
+>>>>>>> master:Lista4_GameAI_PriscilaAriel/Assets/Scenes/Scene_FSM+Pathfinding2.unity
 --- !u!1001 &1473319293
 Prefab:
   m_ObjectHideFlags: 0
