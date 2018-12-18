@@ -8,7 +8,7 @@ public class AnvilBrainEvolution : MonoBehaviour {
     private int max_or_min;
     public float max_value_to_add;
 
-    public AnvilProjectileDNA MutateNewDNA()
+    public float[] MutateNewDNA()
     {
         float random_result = Random.Range(0, 1);
         if (random_result <= 0.5f)
@@ -21,7 +21,7 @@ public class AnvilBrainEvolution : MonoBehaviour {
         }
     }
 
-    AnvilProjectileDNA AddValueToDNA()
+    float[] AddValueToDNA()
     {
         float random_result = Random.Range(0, 1);
         if (random_result <= plus_randomization_change)
@@ -41,14 +41,15 @@ public class AnvilBrainEvolution : MonoBehaviour {
         random_result = Random.Range(0, 11);
         if (random_result > 10) random_result = 10;
 
-        AnvilProjectileDNA new_dna = GetComponent<AnvilBrainResults>().best_dna;
+        float[] new_dna;
+        new_dna = GetComponent<AnvilBrainResults>().best_dna;
 
-        new_dna.projectile_DNA[(int)random_result] += value_to_add;
+        new_dna[(int)random_result] += value_to_add;
 
         return new_dna;
     }
 
-    AnvilProjectileDNA SwapValues()
+    float[] SwapValues()
     {
         float position_1;
         float position_2;
@@ -62,11 +63,11 @@ public class AnvilBrainEvolution : MonoBehaviour {
             if (position_1 > 10) position_1 = 10;
         } while ((int)position_1 == (int)position_2);
 
-        AnvilProjectileDNA new_dna = GetComponent<AnvilBrainResults>().best_dna;
+        float[] new_dna = GetComponent<AnvilBrainResults>().best_dna;
 
-        float change = new_dna.projectile_DNA[(int)position_1];
-        new_dna.projectile_DNA[(int)position_1] = new_dna.projectile_DNA[(int)position_2];
-        new_dna.projectile_DNA[(int)position_2] = change;
+        float change = new_dna[(int)position_1];
+        new_dna[(int)position_1] = new_dna[(int)position_2];
+        new_dna[(int)position_2] = change;
 
         return new_dna;
 

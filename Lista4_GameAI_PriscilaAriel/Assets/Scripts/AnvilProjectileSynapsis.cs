@@ -8,7 +8,7 @@ public class AnvilProjectileSynapsis : MonoBehaviour {
 
     public void PassResultsToBrain()
     {
-        brain_results.dnas.Add(GetComponent<AnvilProjectileDNA>());
+        brain_results.dnas.Add(GetComponent<AnvilProjectileDNA>().getProjectileDNA());
         brain_results.fitness_data.Add(GetComponent<AnvilProjectileFitnessData>());
     }
 

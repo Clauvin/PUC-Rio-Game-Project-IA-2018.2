@@ -8,12 +8,12 @@ public class AnvilBrainResults : MonoBehaviour {
     public ArrayList dnas;
     public ArrayList fitness_data;
 
-    public AnvilProjectileDNA best_dna;
+    public float[] best_dna;
     public float best_fitness = float.MaxValue;
 
     public int quant_of_worsening_fitness = 0;
 
-    public void ChooseBestBestDNAandFitness()
+    public void ChooseBestDNAandFitness()
     {
         float fit = float.MaxValue;
         int position = 0;
@@ -27,14 +27,17 @@ public class AnvilBrainResults : MonoBehaviour {
             }
         }
 
+        Debug.Log("Fit " + fit);
+        Debug.Log("Position " + position);
+
         if (best_dna == null)
         {
-            best_dna = new AnvilProjectileDNA(((AnvilProjectileDNA)dnas[position]).getProjectileDNA());
+            best_dna = (float[])dnas[position];
             best_fitness = fit;
         }
         else if (best_fitness > fit)
         {
-            best_dna = new AnvilProjectileDNA(((AnvilProjectileDNA)dnas[position]).getProjectileDNA());
+            best_dna = (float[])dnas[position];
             best_fitness = fit;
         }
         else
@@ -74,10 +77,8 @@ public class AnvilBrainResults : MonoBehaviour {
         valores[(int)ProjectileDNANames.Z_SIZE] = 2;
         valores[(int)ProjectileDNANames.Z_TELEGUIDING] = 0;
 
-        AnvilProjectileDNA starter_dna = new AnvilProjectileDNA(valores);
-
-        dnas.Add(starter_dna);
-        best_dna = starter_dna;
+        dnas.Add(valores);
+        best_dna = valores;
         fitness_data.Add(new AnvilProjectileFitnessData());
 	}
 	
