@@ -8,7 +8,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
     Vector3 target_initial_position;
     Vector3 target_initial_distance;
     Vector3 target_step;
-    Vector3 acceleration;
 
     GameObject player;
 
@@ -33,8 +32,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
         scale.z = dna.projectile_DNA[(int)ProjectileDNANames.Z_SIZE];
 
         transform.localScale = scale;
-
-        acceleration = new Vector3(0, 0, 0);
 
     }
 	
