@@ -21,18 +21,13 @@ public class AnvilBrainResults : MonoBehaviour {
         float fit = float.MaxValue;
         int position = 0;
 
-        Debug.Log("Count = " + dnas.Count);
         for (int i = 0; i < dnas.Count; i++)
         {
             if (fit > ((AnvilProjectileFitnessData)fitness_data[i]).fitness)
             {
-                Debug.Log("Maior = " + fit);
-                Debug.Log("Menor = " + ((AnvilProjectileFitnessData)fitness_data[i]).fitness);
-
                 fit = ((AnvilProjectileFitnessData)fitness_data[i]).fitness;
                 position = i;
             }
-            Debug.Log("---------------------");
         }
 
         if (best_dna == null)
@@ -62,7 +57,6 @@ public class AnvilBrainResults : MonoBehaviour {
             }
         }
 
-        Debug.Log(best_dna);
         number_of_iterations++;
     }
 
@@ -80,7 +74,8 @@ public class AnvilBrainResults : MonoBehaviour {
 
     }
 
-    void Start () {
+    private void ResetFitness()
+    {
         dnas = new ArrayList(1);
         fitness_data = new ArrayList(1);
 
@@ -100,6 +95,10 @@ public class AnvilBrainResults : MonoBehaviour {
         dnas.Add(valores);
         best_dna = valores;
         fitness_data.Add(new AnvilProjectileFitnessData());
+    } 
+
+    void Start () {
+        ResetFitness();
 	}
 	
 	// Update is called once per frame
