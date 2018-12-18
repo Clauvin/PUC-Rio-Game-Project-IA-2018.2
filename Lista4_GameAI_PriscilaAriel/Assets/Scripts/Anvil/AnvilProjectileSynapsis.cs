@@ -12,6 +12,11 @@ public class AnvilProjectileSynapsis : MonoBehaviour {
         brain_results.fitness_data.Add(GetComponent<AnvilProjectileFitnessData>());
     }
 
+    public void PassThatAHitWasAchieved()
+    {
+        brain_results.a_hit_was_made = true;
+    }
+
 	// Use this for initialization
 	void Start () {
         brain_results = GameObject.FindGameObjectWithTag("Anvil Brain").GetComponent<AnvilBrainResults>();
