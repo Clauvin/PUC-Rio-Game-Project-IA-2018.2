@@ -97,6 +97,7 @@ public class AnvilBrainResults : MonoBehaviour {
 
         dnas.Add(valores);
         best_dna = valores;
+        best_fitness = float.MaxValue;
         fitness_data.Add(new AnvilProjectileFitnessData());
     } 
 
