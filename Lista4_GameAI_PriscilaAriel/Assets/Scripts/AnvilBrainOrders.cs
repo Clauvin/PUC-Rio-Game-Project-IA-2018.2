@@ -22,7 +22,7 @@ public class AnvilBrainOrders : MonoBehaviour {
 	void Update () {
 		if (number_of_projectiles_travelling == 0)
         {
-            brain_results.ChooseBestBestDNAandFitness();
+            brain_results.ChooseBestDNAandFitness();
 
             for (int i = 0; i < anvil_shooters.Length; i++)
             {
