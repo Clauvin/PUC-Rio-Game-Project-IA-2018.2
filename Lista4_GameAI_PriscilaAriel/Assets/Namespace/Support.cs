@@ -14,9 +14,6 @@ namespace Support
         X_OFFSET,
         Y_OFFSET,
         Z_OFFSET,
-        X_EXTRA_ACCELERATION,
-        Y_EXTRA_ACCELERATION,
-        Z_EXTRA_ACCELERATION,
         X_TELEGUIDING,
         Y_TELEGUIDING,
         Z_TELEGUIDING

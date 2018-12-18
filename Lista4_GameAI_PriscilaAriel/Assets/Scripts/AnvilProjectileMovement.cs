@@ -8,7 +8,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
     Vector3 target_initial_position;
     Vector3 target_initial_distance;
     Vector3 target_step;
-    Vector3 acceleration;
 
     GameObject player;
 
@@ -34,8 +33,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
 
         transform.localScale = scale;
 
-        acceleration = new Vector3(0, 0, 0);
-
     }
 	
 	// Update is called once per frame
@@ -50,10 +47,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
         offset.x += dna.projectile_DNA[(int)ProjectileDNANames.X_OFFSET];
         offset.y += dna.projectile_DNA[(int)ProjectileDNANames.Y_OFFSET];
         offset.z += dna.projectile_DNA[(int)ProjectileDNANames.Z_OFFSET];
-
-        acceleration.x += dna.projectile_DNA[(int)ProjectileDNANames.X_EXTRA_ACCELERATION];
-        acceleration.y += dna.projectile_DNA[(int)ProjectileDNANames.Y_EXTRA_ACCELERATION];
-        acceleration.z += dna.projectile_DNA[(int)ProjectileDNANames.Z_EXTRA_ACCELERATION];
 
         if (player.transform.position.x > transform.position.x)
         {
@@ -82,6 +75,6 @@ public class AnvilProjectileMovement : MonoBehaviour {
             teleguiding.z = -1 * dna.projectile_DNA[(int)ProjectileDNANames.Z_TELEGUIDING];
         }
 
-        transform.position += (direct_change + offset + acceleration + teleguiding) / 4;
+        transform.position += (direct_change + offset + teleguiding) / 4;
     }
 }

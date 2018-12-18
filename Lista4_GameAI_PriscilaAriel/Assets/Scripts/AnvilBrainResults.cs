@@ -7,56 +7,98 @@ public class AnvilBrainResults : MonoBehaviour {
 
     public ArrayList dnas;
     public ArrayList fitness_data;
-    public int best_dna;
-    public float best_fitness;
+
+    public float[] best_dna;
+    public float best_fitness = float.MaxValue;
+
+    public int quant_of_worsening_fitness = 0;
+    public int limit_of_worsening_fitness = 6;
+
+    public int number_of_iterations = 0;
+
+    public void ChooseBestDNAandFitness()
+    {
+        float fit = float.MaxValue;
+        int position = 0;
+
+        for (int i = 0; i < dnas.Count; i++)
+        {
+            if (fit > ((AnvilProjectileFitnessData)fitness_data[i]).fitness)
+            {
+                fit = ((AnvilProjectileFitnessData)fitness_data[i]).fitness;
+                position = i;
+            }
+        }
+
+        if (best_dna == null)
+        {
+            best_dna = (float[])dnas[position];
+            best_fitness = fit;
+        }
+        else if (best_fitness > fit)
+        {
+            best_dna = (float[])dnas[position];
+            best_fitness = fit;
+        }
+        else
+        {
+            quant_of_worsening_fitness++;
+            if (quant_of_worsening_fitness >= limit_of_worsening_fitness)
+            {
+                if (GetComponent<AnvilBrainEvolution>().plus_randomization_change == 1.0f)
+                {
+                    GetComponent<AnvilBrainEvolution>().plus_randomization_change = 0.0f;
+                }
+                else if (GetComponent<AnvilBrainEvolution>().plus_randomization_change == 0.0f)
+                {
+                    GetComponent<AnvilBrainEvolution>().plus_randomization_change = 1.0f;
+                }
+                quant_of_worsening_fitness = 0;
+            }
+        }
+
+        number_of_iterations++;
+    }
 
     public void TrimLists()
     {
-        AnvilProjectileDNA dna = (AnvilProjectileDNA)dnas[best_dna];
-        float fitness = best_fitness;
-
-        if (fitness > ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness) fitness =
-                ((AnvilProjectileFitnessData)fitness_data[best_dna]).fitness;
-
-        dnas = new ArrayList(1);
-        dnas.Add(dna);
-        best_dna = 0;
-        best_fitness = fitness;
+        dnas.Clear();
+        dnas.Add(best_dna);
+        fitness_data.Clear();
+        fitness_data.Add(new AnvilProjectileFitnessData(best_fitness));
     }
-
-
 
     // Use this for initialization
     void Awake()
     {
-        best_dna = 0;
-        best_fitness = Mathf.Infinity;
+
     }
 
-    void Start () {
+    private void ResetFitness()
+    {
         dnas = new ArrayList(1);
         fitness_data = new ArrayList(1);
 
-        float[] valores = new float[14];
+        float[] valores = new float[11];
         valores[(int)ProjectileDNANames.PROJECTILE_TIME] = 3.0f;
-        valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 5;
-        valores[(int)ProjectileDNANames.X_EXTRA_ACCELERATION] = 0;
+        valores[(int)ProjectileDNANames.PROJECTILE_SPEED] = 0.1f;
         valores[(int)ProjectileDNANames.X_OFFSET] = 0;
         valores[(int)ProjectileDNANames.X_SIZE] = 2;
         valores[(int)ProjectileDNANames.X_TELEGUIDING] = 0;
-        valores[(int)ProjectileDNANames.Y_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.Y_OFFSET] = 0;
         valores[(int)ProjectileDNANames.Y_SIZE] = 2;
         valores[(int)ProjectileDNANames.Y_TELEGUIDING] = 0;
-        valores[(int)ProjectileDNANames.Z_EXTRA_ACCELERATION] = 0;
         valores[(int)ProjectileDNANames.Z_OFFSET] = 0;
         valores[(int)ProjectileDNANames.Z_SIZE] = 2;
         valores[(int)ProjectileDNANames.Z_TELEGUIDING] = 0;
 
-        AnvilProjectileDNA starter_dna = new AnvilProjectileDNA(valores);
-
-        dnas.Add(starter_dna);
+        dnas.Add(valores);
+        best_dna = valores;
         fitness_data.Add(new AnvilProjectileFitnessData());
+    } 
+
+    void Start () {
+        ResetFitness();
 	}
 	
 	// Update is called once per frame
