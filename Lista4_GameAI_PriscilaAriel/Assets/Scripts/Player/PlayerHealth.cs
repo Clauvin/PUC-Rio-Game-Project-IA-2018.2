@@ -36,6 +36,8 @@ public class PlayerHealth : MonoBehaviour
         if(damaged)
         {
             damageImage.color = flashColour;
+            anim.SetTrigger("Pain");
+            Debug.Log("pain");
         }
         else
         {
@@ -49,7 +51,11 @@ public class PlayerHealth : MonoBehaviour
     {
         damaged = true;
 
-        currentHealth -= amount;
+        
+        if (healthSlider.value< healthSlider.value/2)
+            currentHealth -= amount/2;
+        else
+            currentHealth -= amount;
 
         healthSlider.value = currentHealth;
 
@@ -68,7 +74,7 @@ public class PlayerHealth : MonoBehaviour
 
         //playerShooting.DisableEffects ();
 
-        anim.SetTrigger ("Attack");
+        anim.SetTrigger ("Die");
 
         // playerAudio.clip = deathClip;
         // playerAudio.Play ();

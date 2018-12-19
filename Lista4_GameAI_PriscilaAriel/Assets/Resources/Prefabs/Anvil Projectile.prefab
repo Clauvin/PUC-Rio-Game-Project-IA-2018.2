@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_of_creation: 0
-  how_many_seconds_it_should_exist: 3.9261851
+  how_many_seconds_it_should_exist: 3.1279554
 --- !u!114 &114284238878902304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,17 +178,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_DNA:
-  - 3.9261851
-  - 0.79417133
-  - 2.3748717
-  - 2.693971
-  - 2.555132
-  - 0.5057938
-  - 0.92865074
-  - 0.54393816
-  - 0.64306504
-  - 0.74700713
-  - 0.397505
+  - 3.1279554
+  - 0.6205287
+  - 2.382304
+  - 2.2296898
+  - 2.4329607
+  - 0
+  - 0.11850648
+  - 0.46673015
+  - 0.27521873
+  - 0.007562852
+  - 0.29395977
 --- !u!114 &114682447634324174
 MonoBehaviour:
   m_ObjectHideFlags: 1
